@@ -1,0 +1,35 @@
+import { headertable, products } from "../../mock/mock";
+import styles from "./styles.module.scss";
+
+const ProductList = () => {
+  return (
+    <div className={styles.productList}>
+      <div className={styles.header}>
+        <h1>Lista de Productos</h1>
+      </div>
+      <div className={styles.body}>
+        <table className={styles.table}>
+          <thead className={styles.thead}>
+            <tr>
+              {headertable.map(({ id, name }) => (
+                <th key={id}>{name}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody className={styles.tbody}>
+            {products.map(({ id, name, price, available }) => (
+              <tr key={id}>
+                <td>{id}</td>
+                <td>{name}</td>
+                <td>{price}</td>
+                <td>{available ? "Disponible" : "Agotado"}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+};
+
+export default ProductList;

@@ -1,0 +1,32 @@
+.productList{
+  background-color: red;
+  border-radius: 8px;
+
+  .header{
+    background-color: blue;
+    padding: 10px 15px 17px;
+    border-radius: 8px 8px 0 0; 
+  }
+
+  .body{
+    padding: 15px 30px;
+
+    .table{
+      background-color: yellow;
+      border-radius: 8px;
+
+      .thead, .tbody{
+        
+        tr{
+          display: grid;
+          grid-template-columns: 50px 1fr 100px 140px;
+
+          th, td{
+            padding: 10px;
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+}
