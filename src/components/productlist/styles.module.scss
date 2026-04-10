@@ -1,31 +1,45 @@
-.productList{
-  background-color: red;
+.productList {
+  background-color: #fff5;
+  backdrop-filter: blur(7px);
   border-radius: 8px;
 
-  .header{
-    background-color: blue;
+  .header {
+    background-color: #fff5;
     padding: 10px 15px 17px;
-    border-radius: 8px 8px 0 0; 
+    border-radius: 8px 8px 0 0;
   }
 
-  .body{
+  .body {
     padding: 15px 30px;
 
-    .table{
-      background-color: yellow;
+    .table {
+      background-color: #ddd3d3cc;
       border-radius: 8px;
 
-      .thead, .tbody{
-        
-        tr{
+      .thead,
+      .tbody {
+        tr {
           display: grid;
           grid-template-columns: 50px 1fr 100px 140px;
+          grid-template-rows: 40px;
+          column-gap: 20px;
+          padding: 5px 0;
 
-          th, td{
-            padding: 10px;
-            text-align: left;
+          th,
+          td {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            width: 100%;
+            padding: 0 15px;
           }
         }
+      }
+
+      .tbody{
+        tr:nth-child(odd) {
+        background-color: #fff5;
+      }
       }
     }
   }

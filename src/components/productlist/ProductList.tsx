@@ -1,4 +1,6 @@
+import { formatPrice } from "../../helpers/helpers";
 import { headertable, products } from "../../mock/mock";
+import TdStatus from "../tdstatus/TdStatus";
 import styles from "./styles.module.scss";
 
 const ProductList = () => {
@@ -21,8 +23,8 @@ const ProductList = () => {
               <tr key={id}>
                 <td>{id}</td>
                 <td>{name}</td>
-                <td>{price}</td>
-                <td>{available ? "Disponible" : "Agotado"}</td>
+                <td>{formatPrice(price)}</td>
+                <td className={styles.tdstatus}><TdStatus status={available ? "En stock" : "Agotado"}/></td>
               </tr>
             ))}
           </tbody>

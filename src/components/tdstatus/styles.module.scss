@@ -1,0 +1,18 @@
+.marker{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  width: 150px;
+  height: 25px;
+}
+
+.available{
+  background-color: #7dd79c;
+  color: #1f7637;
+}
+
+.exhausted{
+  background-color: #df9aa5;
+  color: #a3293f;
+}
