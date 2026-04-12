@@ -1,18 +1,13 @@
-import styles from './styles.module.scss'
+import styles from "./styles.module.scss";
 
-type StatusType = "En stock" | "Agotado"
-
-interface TdStatusProp {
-  status: StatusType
-}
-
-const TdStatus = ({status}: TdStatusProp) => {
-  const isAvailable = status === "En stock" ? "available": "exhausted"
+const TdStatus = ({ status }: { status: boolean }) => {
   return (
-    <div className={`${styles.marker} ${styles[isAvailable]}`}>
-      <p>{status}</p>
+    <div
+      className={`${styles.marker} ${styles[status ? "available" : "exhausted"]}`}
+    >
+      <p>{status ? "En stock" : "Agotado"}</p>
     </div>
-  )
-}
+  );
+};
 
-export default TdStatus
+export default TdStatus;

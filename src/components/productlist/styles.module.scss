@@ -36,11 +36,22 @@
         }
       }
 
-      .tbody{
+      .tbody {
         tr:nth-child(odd) {
-        background-color: #fff5;
+          background-color: #fff5;
+        }
       }
-      }
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 15px;
+      width: 100%;
+      height: 50px;
+      background-color: #ddd3d3cc;
+      border-radius: 8px;
     }
   }
 }

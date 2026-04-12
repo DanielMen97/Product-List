@@ -1,5 +1,6 @@
 import { formatPrice } from "../../helpers/helpers";
 import { headertable, products } from "../../mock/mock";
+import CustomCheckbox from "../customcheckbox/CustomCheckbox";
 import TdStatus from "../tdstatus/TdStatus";
 import styles from "./styles.module.scss";
 
@@ -24,11 +25,16 @@ const ProductList = () => {
                 <td>{id}</td>
                 <td>{name}</td>
                 <td>{formatPrice(price)}</td>
-                <td className={styles.tdstatus}><TdStatus status={available ? "En stock" : "Agotado"}/></td>
+                <td>
+                  <TdStatus status={available} />
+                </td>
               </tr>
             ))}
           </tbody>
         </table>
+        <div className={styles.menu}>
+            <CustomCheckbox />
+        </div>
       </div>
     </div>
   );
