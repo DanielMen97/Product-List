@@ -1,11 +1,9 @@
 import styles from "./styles.module.scss";
-import useContextHook from "../../hook/useContextHook";
 
-const CustomCheckbox = () => {
-  const { filterOnlyAvailable } = useContextHook();
+const Checkbox = ({text, onChange}:{text:string, onChange: (check: boolean) => void}) => {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    filterOnlyAvailable(e.target.checked);
+    onChange(e.target.checked);
   }
 
   return (
@@ -16,9 +14,9 @@ const CustomCheckbox = () => {
         id="checkbox"
         onChange={handleInputChange}
       />
-      <label htmlFor="checkbox">Mostrar solo disponibles</label>
+      <label htmlFor="checkbox">{text}</label>
     </div>
   );
 };
 
-export default CustomCheckbox;
+export default Checkbox;
