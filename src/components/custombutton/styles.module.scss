@@ -1,17 +1,40 @@
 .custombutton {
-  background-color: #007bff;
   color: white;
   border: none;
-  padding: 5px 15px;
+  padding: 5px 10px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 15px;
+  font-size: 14px;
   cursor: pointer;
   border-radius: 4px;
   transition: background-color 0.3s ease;
 
   &:hover {
     background-color: #0056b3;
+  }
+}
+
+.primary {
+  background-color: #007bff;
+
+  &:hover {
+    background-color: #0056b3;
+  }
+}
+
+.secondary {
+  background-color: #dc2b2b;
+
+  &:hover {
+    background-color: #ae1212;
+  }
+}
+
+.transparent {
+  background-color: transparent;
+
+  &:hover {
+    background-color: #b5aeae;
   }
 }

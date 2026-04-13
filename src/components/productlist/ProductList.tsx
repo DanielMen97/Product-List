@@ -7,12 +7,12 @@ import styles from "./styles.module.scss";
 import CustomButton from "../custombutton/CustomButton";
 
 const ProductList = () => {
-  const { state } = useContextHook();
+  const { state, addProduct, deleteProduct } = useContextHook();
 
   const productsFiltered = state.onlyAvailable
     ? state.products.filter((product) => product.available)
     : state.products;
-    
+
   return (
     <div className={styles.productList}>
       <div className={styles.header}>
@@ -36,13 +36,23 @@ const ProductList = () => {
                 <td>
                   <TdStatus status={available} />
                 </td>
+                <td>
+                  <CustomButton
+                    variant="transparent"
+                    onClick={() => deleteProduct(id)}
+                  >
+                    <i className="fas fa-trash" style={{ color: "rgb(220, 18, 18)" }}></i>
+                  </CustomButton>
+                </td>
               </tr>
             ))}
           </tbody>
         </table>
         <div className={styles.menu}>
           <CustomCheckbox />
-          <CustomButton />
+          <CustomButton onClick={addProduct}>
+            Agregar Producto
+          </CustomButton>
         </div>
       </div>
     </div>

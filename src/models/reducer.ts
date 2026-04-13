@@ -3,11 +3,13 @@ import type { ProductI } from "./global";
 
 export interface StateReducerI {
   products: ProductI[];
+  nextId: number;
   onlyAvailable: boolean;
 }
 
 export const initialStateReducer: StateReducerI = {
   products: products,
+  nextId: products.length,
   onlyAvailable: false,
 };
 

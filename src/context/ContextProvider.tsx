@@ -14,7 +14,7 @@ export const ContextProvider = ({
     dispatch({
       type: "ADD_PRODUCT",
       payload: {
-        id: state.products.length + 1,
+        id: 0,
         name: "Celular Xiaomi P20",
         price: 560000,
         available: true,

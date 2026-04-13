@@ -5,7 +5,8 @@ export const fnReducer = (state: StateReducerI, action: ActionReducerDispatchI):
     case actionReducer.ADD_PRODUCT:
       return {
         ...state,
-        products: [...state.products, action.payload],
+        products: [...state.products, {...action.payload, id: state.nextId}],
+        nextId: state.nextId++,
       };
     case actionReducer.FILTER_ONLY_AVAILABLE:
       return {

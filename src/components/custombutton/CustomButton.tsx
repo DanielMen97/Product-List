@@ -1,12 +1,16 @@
 import styles from "./styles.module.scss";
-import useContextHook from "../../hook/useContextHook";
 
-const CustomButton = () => {
-  const { addProduct } = useContextHook();
+interface Props {
+  children: React.ReactNode;
+  variant?: "primary" | "secondary" | "transparent";
+  onClick: () => void;
+}
+
+const CustomButton = ({children, variant = "primary", onClick}: Props) => {
 
   return (
-    <button className={styles.custombutton} onClick={addProduct}>
-      Agregar Producto
+    <button className={`${styles.custombutton} ${styles[variant]}`} onClick={onClick}>
+      {children}
     </button>
   );
 };
