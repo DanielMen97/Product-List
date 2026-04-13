@@ -1,10 +1,18 @@
+import useContextHook from "../../hook/useContextHook";
 import { formatPrice } from "../../helpers/helpers";
-import { headertable, products } from "../../mock/mock";
+import { headertable } from "../../mock/mock";
 import CustomCheckbox from "../customcheckbox/CustomCheckbox";
 import TdStatus from "../tdstatus/TdStatus";
 import styles from "./styles.module.scss";
+import CustomButton from "../custombutton/CustomButton";
 
 const ProductList = () => {
+  const { state } = useContextHook();
+
+  const productsFiltered = state.onlyAvailable
+    ? state.products.filter((product) => product.available)
+    : state.products;
+    
   return (
     <div className={styles.productList}>
       <div className={styles.header}>
@@ -20,7 +28,7 @@ const ProductList = () => {
             </tr>
           </thead>
           <tbody className={styles.tbody}>
-            {products.map(({ id, name, price, available }) => (
+            {productsFiltered.map(({ id, name, price, available }) => (
               <tr key={id}>
                 <td>{id}</td>
                 <td>{name}</td>
@@ -33,7 +41,8 @@ const ProductList = () => {
           </tbody>
         </table>
         <div className={styles.menu}>
-            <CustomCheckbox />
+          <CustomCheckbox />
+          <CustomButton />
         </div>
       </div>
     </div>
