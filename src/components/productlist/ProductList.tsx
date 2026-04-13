@@ -41,7 +41,7 @@ const ProductList = () => {
                     variant="transparent"
                     onClick={() => deleteProduct(id)}
                   >
-                    <i className="fas fa-trash" style={{ color: "rgb(220, 18, 18)" }}></i>
+                    <i className="fas fa-trash" style={{ color: "#DC1212" }}></i>
                   </CustomButton>
                 </td>
               </tr>
